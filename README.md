@@ -13,11 +13,11 @@
 - `npm install`
 - `npm start` o usando nodemon `npm run dev`
 
-### Pruebas empleando contendor Docker
+### Pruebas empleando contenedor Docker
 
-Con docker y si empleamos un Volumen para resguardar el documento con los nombres podemos persistir y agurar la informacion.
+Con docker y si empleamos un Volumen para resguardar el documento con los nombres podemos persistir y asegurar la información.
 
-Nota: uso de volumen a continuacion
+Nota: uso de volumen a continuación
 Creamos volumen usando un contenedor = `docker create -it --name data_vol_container -v /file ubuntu:14.04 bash- `
 Adjuntar a nuestra imagen: - `docker run -e PORT=8081 -p 8081:8081 -d richi/app  --volumes-from data_vol_container`
 
@@ -48,11 +48,8 @@ Dar privilegios para correr sin docker: `sudo chmod 777 bash/application.sh && s
 
 Usando JS con ES6 programación funcional para mayor rapidez se toma una cadena (cada nombre) y se recorre por cada carácter pretendiendo encontrar el mismo número de coincidencias entre el texto buscado y la cadena (nombre), de ser diferentes se descarta el elemento.
 
-Nota probando con 50,000 elemento el tiempo varía entre 0.015segundo y 0.070segundo siendo así por la arquitectura dirigida por eventos de Node, si fuera necesario optimizar más se buscaría un una arquitectura de micro-servicios con Balanceadores como Kubernetes y Nginx.
+Nota: probando con 50,000 elemento el tiempo varía entre 0.015 segundo y 0.070 segundo siendo así por la arquitectura dirigida por eventos de Node, si fuera necesario optimizar más se buscaría un una arquitectura de micro-servicios con Balanceadores como Kubernetes y Nginx.
 
 ### API REST
 
-Se usa Node como API REST para facilitar las peticiones con Bash meramente se generaban conflictos con caracteres siendo también el uso indebido de rehacer las cosas en lugar de la reutilización.
-
-
-
+Se usa Node como API REST para facilitar las peticiones con Bash (por el requerimiedo de usarlo por consola). ya que meramente BASH genera conflictos con caracteres, se recomienda la reutilización, "no reahacer la rueda" usando librerias como Fuse.js para algoritmos de busqueda, y escabilidad con un API REST y un Gateway.
