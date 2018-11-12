@@ -18,7 +18,7 @@ module.exports = (router) => {
         let nombres = [];
 
         const rl = readline.createInterface({
-        input: fs.createReadStream('./file/users.txt'),
+        input: fs.createReadStream('./file/fuzzy-search.txt'),
             crlfDelay: Infinity
         });
         
@@ -45,7 +45,7 @@ module.exports = (router) => {
 
         let name = req.body.name.replace(/,/g, ' ');
 
-        var logStream = fs.createWriteStream('./file/users.txt', {'flags': 'a'});
+        var logStream = fs.createWriteStream('./file/fuzzy-search.txt', {'flags': 'a'});
         logStream.write('\n'+name);
         logStream.end( res.json({message:'Usuario agregado'}) );
 
@@ -68,7 +68,7 @@ module.exports = (router) => {
         let startTime = process.hrtime();
     
         const rl = readline.createInterface({
-        input: fs.createReadStream('./file/users.txt'),
+        input: fs.createReadStream('./file/fuzzy-search.txt'),
             crlfDelay: Infinity
         });
         
