@@ -1,5 +1,5 @@
 ## Pre requisitos
-- Tener Docker instalado
+- Tener Docker instalado o Node V10 dependiendo ejecución
 - Tener libre el puerto 8081
 
 ## Ejecutar con Docker
